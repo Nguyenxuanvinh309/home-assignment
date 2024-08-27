@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.storybook-text-field {
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  border: 1px solid;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+}
+.storybook-text-field--small {
+  font-size: 12px;
+  padding: 10px 16px;
+}
+.storybook-text-field--medium {
+  font-size: 14px;
+  padding: 11px 20px;
+}
+.storybook-text-field--large {
+  font-size: 16px;
+  padding: 12px 24px;
+}

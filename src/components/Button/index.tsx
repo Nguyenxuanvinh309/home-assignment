@@ -1,15 +1,11 @@
 import React from 'react';
-import './button.css';
+import './styles.css'; 
 
 export interface ButtonProps {
   /**
    * Is this the principal call to action on the page?
    */
   primary?: boolean;
-  /**
-   * What background color to use
-   */
-  backgroundColor?: string;
   /**
    * How large should the button be?
    */
@@ -27,22 +23,21 @@ export interface ButtonProps {
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({
+const ButtonComponent = ({
   primary = false,
   size = 'medium',
-  backgroundColor,
   label,
   ...props
 }: ButtonProps) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+  const mode = primary ? 'text-white w-full bg-primary hover:border-primary-9 hover:bg-white hover:text-primary transition-[background]' : 'w-full bg-white border-primary-9 text-primary hover:border-primary-9 hover:bg-primary hover:text-white transition-[background] mt-[20px]';
   return (
-    <button
-      type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={{ backgroundColor }}
+    <button 
+      className={`${['storybook-button', `storybook-button--${size}`].join(' ')} ${mode}`}
       {...props}
     >
       {label}
     </button>
   );
 };
+
+export default ButtonComponent;
