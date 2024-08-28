@@ -26,6 +26,7 @@
 }
 .storybook-label {
   display: inline-block;
+  text-align: left;
   font-size: 14px;
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }

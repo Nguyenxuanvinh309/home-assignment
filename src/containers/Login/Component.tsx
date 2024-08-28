@@ -1,3 +1,7 @@
+import {
+  Input,
+  Button
+} from '../../components';
 import { useTranslation } from 'react-i18next';
 
 const Component = () => {
@@ -7,13 +11,20 @@ const Component = () => {
       <div className="text-center">
         <div className="p-6 bg-white max-w-md m-auto rounded-lg shadow-md">
           <p className="text-primary">This is Login</p>
-          <button className="text-white w-full bg-primary hover:border-primary-9 hover:bg-white hover:text-primary transition-[background]">
-            {t('global:yes')}
-          </button>
-
-          <button className="w-full bg-white border-primary-9 text-primary hover:border-primary-9 hover:bg-primary hover:text-white transition-[background] mt-[20px]">
-            Login
-          </button>
+          <Input
+            label="Input"
+            onClick={() => {}}
+            placeholder="Input component"
+            required
+            size="large"
+            variant="default"
+          />
+          <div className='mt-[20px]'>
+            <Button 
+              label={t('global:yes')} 
+              size="large"
+            />
+          </div>
         </div>
       </div>
     </div>

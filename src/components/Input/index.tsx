@@ -40,14 +40,14 @@ const InputComponent = ({
   ...props
 }: InputProps) => {
   const defaultVariant = 
-    'placeholder-gray-500 text-black w-full bg-white border-gray-400 focus-visible:border-primary-9 focus-visible:outline-0 hover:border-primary-9 transition-[border]';
+    'placeholder-gray-500 text-black w-inherit bg-white border-gray-400 focus-visible:border-primary-9 focus-visible:outline-0 hover:border-primary-9 transition-[border]';
   const filledVariant = 
-    'placeholder-gray-100 text-black w-full border-gray-400 bg-gray-400 focus-visible:border-primary-9 focus-visible:outline-0 hover:border-primary-9 transition-[border]';
+    'placeholder-gray-100 text-black w-inherit border-gray-400 bg-gray-400 focus-visible:border-primary-9 focus-visible:outline-0 hover:border-primary-9 transition-[border]';
   const unstyledVariant = 
-    'text-black w-full bg-transparent border-0 focus-visible:border-transparent focus-visible:outline-0 hover:border-transparent transition-[border] px-0';
+    'text-black w-inherit bg-transparent border-0 focus-visible:border-transparent focus-visible:outline-0 hover:border-transparent transition-[border] px-0';
   const disabledStyle = 
-    `placeholder-gray-100 text-black w-full bg-gray-400 focus-visible:border-gray-100 focus-visible:outline-0 hover:border-gray-100 transition-[border] border-gray-100 pointer-events-none`;
-  const errorStyle = 'placeholder-gray-500 text-black w-full bg-white border-red-500 focus-visible:border-red-500 focus-visible:outline-0 hover:border-red-500 transition-[border]';
+    `placeholder-gray-100 text-black w-inherit bg-gray-400 focus-visible:border-gray-100 focus-visible:outline-0 hover:border-gray-100 transition-[border] border-gray-100 pointer-events-none`;
+  const errorStyle = 'placeholder-gray-500 text-black w-inherit bg-white border-red-500 focus-visible:border-red-500 focus-visible:outline-0 hover:border-red-500 transition-[border]';
 
   const variantList = {
     default: defaultVariant,
@@ -56,7 +56,7 @@ const InputComponent = ({
   }
 
   return (
-    <>
+    <div className='flex flex-col'>
       {label && <label className='storybook-label mb-[2px]'>{label}{required && <span className='text-red-500'>*</span>}</label>}
       <input
         placeholder={placeholder}
@@ -69,7 +69,7 @@ const InputComponent = ({
         {...props}
       />
       {error && <span className='error-text text-red-500'>{errorText || ''}</span>}
-    </>
+    </div>
   );
 };
 

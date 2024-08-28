@@ -28,7 +28,7 @@ export interface ButtonProps {
  * Primary UI component for user interaction
  */
 const ButtonComponent = ({
-  primary = false,
+  primary = true,
   size = 'medium',
   label,
   disabled,
