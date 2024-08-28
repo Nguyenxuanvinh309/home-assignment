@@ -29,7 +29,8 @@
     "login": {
       "title": "ログイン"
     },
-    "email": "メールアドレス"
+    "email": "メールアドレス",
+    "forgottenEmail": "忘れたメールアドレス"
   },
   "validation": {
     "permissionDenied": "Permission Denied.",

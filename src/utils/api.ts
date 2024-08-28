@@ -21,6 +21,7 @@ api.interceptors.request.use(async (config: AxiosRequestConfig) => {
     requestConfig.headers.Authorization = `Bearer ${authToken}`;
   }
   requestConfig.headers['Accept-Language'] = Helper.getLang() || LANGUAGE_DISPLAY;
+  requestConfig.headers['accept'] = 'application/json';
   return requestConfig;
 });
 

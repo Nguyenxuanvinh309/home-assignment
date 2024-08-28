@@ -10,4 +10,4 @@ const schema = object({
 });
 
 export default schema;
-export type Type = InferType<typeof schema>;
+export type LoginType = InferType<typeof schema>;

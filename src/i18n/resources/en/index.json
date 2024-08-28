@@ -29,7 +29,8 @@
 		"login": {
       "title": "Login"
     },
-		"email": "Email"
+		"email": "Email",
+		"forgottenEmail": "Forgotten email"
 	},
 	"validation": {
 		"permissionDenied": "Permission Denied.",
