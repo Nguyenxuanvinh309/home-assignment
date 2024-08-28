@@ -1,5 +1,5 @@
 import React from 'react';
-import ButtonComponent from '../../components/Button';
+import Component from '../../components/Button';
 import { ButtonProps as Props } from '../../components/Button';
 
 /**
@@ -12,7 +12,7 @@ export const Button = ({
   ...props
 }: Props) => {
   return (
-    <ButtonComponent
+    <Component
       primary={primary}
       size={size}
       label={label}
