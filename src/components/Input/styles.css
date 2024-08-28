@@ -2,23 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-.storybook-text-field {
+.storybook-input {
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 700;
+  font-weight: 400;
   border: 1px solid;
-  cursor: pointer;
-  display: inline-block;
-  line-height: 1;
 }
-.storybook-text-field--small {
+.storybook-input--small {
   font-size: 12px;
   padding: 10px 16px;
 }
-.storybook-text-field--medium {
+.storybook-input--medium {
   font-size: 14px;
   padding: 11px 20px;
 }
-.storybook-text-field--large {
+.storybook-input--large {
   font-size: 16px;
   padding: 12px 24px;
 }

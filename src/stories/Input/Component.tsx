@@ -1,21 +1,21 @@
 import React from 'react';
-import ButtonComponent from '../../components/Button';
-import { ButtonProps as Props } from '../../components/Button';
+import Component from '../../components/Input';
+import { InputProps as Props } from '../../components/Input';
 
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({
-  primary = false,
+export const Input = ({
   size = 'medium',
   label,
+  placeholder,
   ...props
 }: Props) => {
   return (
-    <ButtonComponent
-      primary={primary}
+    <Component
       size={size}
       label={label}
+      placeholder={placeholder}
       {...props}
     />
   );

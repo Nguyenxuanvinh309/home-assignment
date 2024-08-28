@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
-import { Component } from './Component';
+import { Input } from './Component';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'Example/TextField',
-  component: Component,
+  title: 'Components/Input',
+  component: Input,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: 'centered',
@@ -16,35 +16,36 @@ const meta = {
   argTypes: {},
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: { onClick: fn() },
-} satisfies Meta<typeof Component>;
+} satisfies Meta<typeof Input>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Primary: Story = {
+export const Default: Story = {
   args: {
-    primary: true,
-    label: 'TextField',
-  },
-};
-
-export const Secondary: Story = {
-  args: {
-    label: 'TextField',
+    label: 'Input',
+    placeholder: 'Input component'
   },
 };
 
 export const Large: Story = {
   args: {
     size: 'large',
-    label: 'TextField',
+    label: 'Input',
+  },
+};
+
+export const Medium: Story = {
+  args: {
+    size: 'medium',
+    label: 'Input',
   },
 };
 
 export const Small: Story = {
   args: {
     size: 'small',
-    label: 'TextField',
+    label: 'Input',
   },
 };
