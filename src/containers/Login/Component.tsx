@@ -1,26 +1,26 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import {
   Button,
-  InputForm
+  InputForm,
+  Loading
 } from '../../components';
+import { yupResolver } from '@hookform/resolvers/yup';
 import { useTranslation } from 'react-i18next';
-
-type Inputs = {
-  email: string;
-};
+import schema, { Type } from "./models/schema";
 
 const Component = () => {
   const { t } = useTranslation();
   const {
     control,
     handleSubmit,
-  } = useForm<Inputs>({
+  } = useForm<Type>({
+    resolver: yupResolver(schema),
     defaultValues: {
       email: ''
     },
-
+    mode: 'onBlur'
   })
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data)
+  const onSubmit: SubmitHandler<Type> = (data) => console.log(data)
   
   return (
     <div className="h-full w-full bg-white md:bg-[transparent]">
@@ -45,6 +45,7 @@ const Component = () => {
               />
             </div>
           </form>
+          {/* <Loading /> */}
         </div>
       </div>
     </div>
