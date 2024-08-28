@@ -3,12 +3,17 @@
 @tailwind utilities;
 
 .storybook-button {
+  display: inline-block;
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
-  border: 1px solid;
-  cursor: pointer;
-  display: inline-block;
   line-height: 1;
+  border: 1px solid;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  cursor: pointer;
 }
 .storybook-button--small {
   font-size: 12px;

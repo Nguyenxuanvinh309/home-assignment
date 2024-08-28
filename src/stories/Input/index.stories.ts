@@ -23,6 +23,9 @@ const meta = {
     },
     disabled: {
       control: { type: 'boolean' }
+    },
+    error: {
+      control: { type: 'boolean' }
     }
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
@@ -38,7 +41,8 @@ export const Default: Story = {
     label: 'Input',
     placeholder: 'Input component',
     required: true,
-    disabled: true,
+    disabled: false,
+    error: false,
   },
 };
 
@@ -49,6 +53,7 @@ export const Large: Story = {
     placeholder: 'Input component',
     required: false,
     disabled: false,
+    error: false,
   },
 };
 
@@ -59,6 +64,7 @@ export const Medium: Story = {
     placeholder: 'Input component',
     required: false,
     disabled: false,
+    error: false,
   },
 };
 
@@ -69,6 +75,7 @@ export const Small: Story = {
     placeholder: 'Input component',
     required: false,
     disabled: false,
+    error: false,
   },
 };
 
@@ -79,6 +86,7 @@ export const Variant: Story = {
     variant: 'default',
     required: false,
     disabled: false,
+    error: false,
   },
 };
 
@@ -87,5 +95,17 @@ export const Disabled: Story = {
     label: 'Button',
     placeholder: 'Input component',
     disabled: true,
+    error: false,
   },
 };
+
+export const Error: Story = {
+  args: {
+    label: 'Button',
+    placeholder: 'Input component',
+    disabled: false,
+    error: true,
+    errorText: 'Error text'
+  },
+};
+

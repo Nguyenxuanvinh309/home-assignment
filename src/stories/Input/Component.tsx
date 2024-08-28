@@ -11,6 +11,8 @@ export const Input = ({
   placeholder,
   required,
   disabled,
+  error,
+  errorText,
   ...props
 }: Props) => {
   return (
@@ -20,6 +22,8 @@ export const Input = ({
       placeholder={placeholder}
       required={required}
       disabled={disabled}
+      error={error}
+      errorText={errorText}
       {...props}
     />
   );
