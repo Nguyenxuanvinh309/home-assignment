@@ -25,5 +25,4 @@ const routes = [...indexRoutes];
 
 // export const sideMenuRoutes = convertToMenuRoutes(adminRoutes);
 
-console.log(routes);
 export const router = createBrowserRouter(routes);

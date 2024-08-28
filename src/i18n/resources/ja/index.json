@@ -6,6 +6,7 @@
     "edit": "編集",
     "cancel": "キャンセル",
     "ok": "ok",
+    "send": "送信",
     "networkError": "インターネット接続がありません。",
     "selectAll": "すべて選択",
     "settle": "確定",
@@ -24,7 +25,12 @@
     "noData": "情報がありません ",
     "hasNoInfo": "情報がありません",
     "roiSimulation": "投資金額シミュレーション",
-    "changePasswordSuccess": "パスワードを変更しました。"
+    "changePasswordSuccess": "パスワードを変更しました。",
+    "login": {
+      "title": "ログイン"
+    },
+    "email": "メールアドレス",
+    "forgottenEmail": "忘れたメールアドレス"
   },
   "validation": {
     "permissionDenied": "Permission Denied.",
