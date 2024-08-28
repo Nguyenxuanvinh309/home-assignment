@@ -5,7 +5,8 @@
 .storybook-input {
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 400;
-  border: 1px solid;
+  border: 1px solid transparent;
+  border-radius: 4px;
 }
 .storybook-input--small {
   font-size: 12px;
@@ -18,4 +19,9 @@
 .storybook-input--large {
   font-size: 16px;
   padding: 12px 24px;
+}
+.storybook-label {
+  display: inline-block;
+  font-size: 14px;
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }

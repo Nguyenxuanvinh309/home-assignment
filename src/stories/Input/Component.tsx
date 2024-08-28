@@ -9,6 +9,8 @@ export const Input = ({
   size = 'medium',
   label,
   placeholder,
+  required,
+  disabled,
   ...props
 }: Props) => {
   return (
@@ -16,6 +18,8 @@ export const Input = ({
       size={size}
       label={label}
       placeholder={placeholder}
+      required={required}
+      disabled={disabled}
       {...props}
     />
   );
