@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles.css'; 
+import { RefCallBack } from 'react-hook-form';
 
 export interface InputProps {
   /**
@@ -19,10 +20,15 @@ export interface InputProps {
   label?: string;
   placeholder?: string;
   errorText?: string;
+  value?: string | number;
   /**
    * Optional click handler
    */
   onClick?: () => void;
+  /**
+   * RefCallBack
+   */
+  ref?: RefCallBack
 }
 
 /**
@@ -37,6 +43,8 @@ const InputComponent = ({
   disabled = false,
   error = false,
   errorText,
+  value,
+  ref,
   ...props
 }: InputProps) => {
   const defaultVariant = 
@@ -57,8 +65,10 @@ const InputComponent = ({
 
   return (
     <div className='flex flex-col'>
-      {label && <label className='storybook-label mb-[2px]'>{label}{required && <span className='text-red-500'>*</span>}</label>}
+      {label && <label className='storybook-label text-left mb-[2px]'>{label}{required && <span className='text-red-500'>*</span>}</label>}
       <input
+        ref={ref}
+        value={value}
         placeholder={placeholder}
         className={`${[
           'storybook-input',
@@ -68,7 +78,7 @@ const InputComponent = ({
         ].join(' ')}`}
         {...props}
       />
-      {error && <span className='error-text text-red-500'>{errorText || ''}</span>}
+      {error && <span className='error-text text-red-500 text-left'>{errorText || ''}</span>}
     </div>
   );
 };

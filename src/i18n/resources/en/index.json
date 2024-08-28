@@ -6,6 +6,7 @@
 		"edit": "Edit",
 		"cancel": "Cancel",
 		"ok": "ok",
+		"send": "Send",
 		"networkError": "No Internet connection",
 		"selectAll": "Select all",
 		"settle": "Confirm",
@@ -24,7 +25,11 @@
 		"noData": "No information",
 		"hasNoInfo": "No information",
 		"roiSimulation": "Investment amount simulation",
-		"changePasswordSuccess": "Password changed."
+		"changePasswordSuccess": "Password changed.",
+		"login": {
+      "title": "Login"
+    },
+		"email": "Email"
 	},
 	"validation": {
 		"permissionDenied": "Permission Denied.",
