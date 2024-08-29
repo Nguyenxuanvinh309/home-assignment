@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { toast } from 'react-toastify';
 import _forOwn from 'lodash/forOwn';
 
@@ -19,6 +20,7 @@ const Helper = {
   storeData: (key: string, value: string): void => {
     localStorage.setItem(key, value);
   },
+  remoteStoreData: (value: string) => localStorage.removeItem(value),
   getDownLoadFileCSV: (
     csvContent: number | boolean | BlobPart,
     csvFileName = 'dataList.csv',

@@ -9,12 +9,22 @@ import { useTranslation } from 'react-i18next';
 import schema, { LoginType } from "./model/schema";
 import { loginRequest } from './action';
 import loginStore from "./store";
+import "./style.css";
+import Helper from "../../utils/helpers";
+import { OP_DATA } from "../../utils/constants";
+import { useEffect } from "react";
 
 const Component = () => {
   const loading = loginStore((state) => state.loading);
+  const error = loginStore((state) => state.error);
+  const data = loginStore((state) => state.data);
   const updateLoading = loginStore((state) => state.updateLoading);
+  const updateError = loginStore((state) => state.updateError);
+  const updateData = loginStore((state) => state.updateData);
   const resetStore = loginStore((state) => state.reset);
   const { t } = useTranslation();
+  const token = Helper.getAuthToken();
+  const opData = Helper.getDataStored(OP_DATA);
   const {
     control,
     handleSubmit,
@@ -25,47 +35,93 @@ const Component = () => {
     },
     mode: 'onBlur'
   });
+
   const onSubmit: SubmitHandler<LoginType > = (data) => {
+    resetStore();
     updateLoading(true);
     loginRequest({
       email: encodeURIComponent(data?.email),
-      pass: '1234567890'
-    })?.catch(() => {
-      resetStore();
+    })?.then((e) => {
+      if (e?.code !== 200) {
+        updateError(e);
+        updateLoading(false);
+      } else {
+        updateData(e);
+        updateLoading(false);
+      }
+    })?.catch((error) => {
+      updateError(error);
+      updateLoading(false);
     });
   };
+
+  // Handle Log out
+  const handleLogout = () => {
+    updateLoading(true);
+    
+    setTimeout(() => {
+      Helper.removeAuthToken();
+      Helper.remoteStoreData(OP_DATA);
+      resetStore();
+    }, 100);
+  };
+
+  useEffect(() => {
+    if (opData) updateData(JSON.parse(opData));
+  }, [opData, updateData]);
 
   return (
     <div className="h-full w-full bg-white md:bg-[transparent]">
       <div className="flex text-center h-screen">
         <div className={`${[
           loading ? "flex justify-center items-center" : '',
-          "p-6 bg-white max-w-[448px] min-h-[290px] box-border w-full m-auto md:shadow-md md:rounded-lg"].join(' ')}`}>
+          "overflow-hidden p-6 bg-white max-w-[448px] min-h-[290px] box-border w-full m-auto md:shadow-md md:rounded-lg"].join(' ')}`}>
           {loading ? <div><Loading /></div> : (
             <>
-              <p className="text-primary text-2xl">{t('global:login.title')}</p>
-              <form onSubmit={handleSubmit(onSubmit)} action="https://httpbin.org/basic-auth">
-                <InputForm 
-                  name="email" 
-                  control={control} 
-                  label={t('global:email')}
-                  onClick={() => {}}
-                  placeholder={t('global:email')}
-                  required
-                  size="large"
-                  variant="default"
-                />
-                <div className='mt-[20px]'>
-                  <Button 
-                    label={t('global:send')} 
-                    size="large"
-                    disabled={loading}
-                  />
-                </div>
-              </form>
-              <div className="mt-[5px]">
-                <a href="#" className="text-primary hover:text-primary hover:underline">{t('global:forgottenEmail')}</a>
-              </div>
+              {
+                token ? (
+                  <div className="flex justify-center items-center flex-col min-h-[242px] slide-up decoration-coloum">
+                    <p className="text-xl">Welcome back, <span className="font-bold">
+                      {data?.params?.email && decodeURIComponent(data?.params?.email)}</span>!
+                    </p>
+                    <Button 
+                      label={t('global:logout')} 
+                      size="large"
+                      primary={false}
+                      onClick={handleLogout}
+                    />
+                  </div>
+                ) : (
+                  <>
+                    <p className="text-primary text-2xl">{t('global:login.title')}</p>
+                      <form onSubmit={handleSubmit(onSubmit)} action="https://httpbin.org/basic-auth">
+                        <InputForm 
+                          name="email" 
+                          control={control} 
+                          label={t('global:email')}
+                          onClick={() => {}}
+                          placeholder={t('global:email')}
+                          required
+                          size="large"
+                          variant="default"
+                        />
+                        <div className='mt-[20px]'>
+                          <Button 
+                            label={t('global:send')} 
+                            size="large"
+                            disabled={loading}
+                          />
+                        </div>
+                      </form>
+                      <div className="mt-[5px]">
+                        <a href="#" className="text-primary text-sm hover:text-primary hover:underline">{t('global:forgottenEmail')}</a>
+                      </div>
+                  </>
+                )
+              }
+              {
+                error?.message && <p className="text-red-500">{error?.message}!!!</p>
+              }
             </>
           )}
         </div>
