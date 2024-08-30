@@ -1,6 +1,11 @@
+import Layout from "../../layouts";
 import Component from "./Component";
 
 function ForgotEmail() {
-  return <Component />;
+  return (
+    <Layout>
+      <Component />
+    </Layout>
+  );
 };
 export default ForgotEmail;
