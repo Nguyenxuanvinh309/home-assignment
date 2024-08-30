@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable prefer-promise-reject-errors */
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 import { API_URL, LANGUAGE_DISPLAY } from './config';
