@@ -7,10 +7,10 @@ class AuthService extends ApiInstance {
     super(apiUrl);
   }
 
-  login = (params: LoginType & {
-    pass: string
-  }): Promise<AxiosResponse> => {
-    return this.get(`/basic-auth/${params?.email}/${params?.pass}`);
+  login = (params: LoginType): Promise<AxiosResponse> => {
+    return this.post(`/post`, {
+      params
+    });
   };
 }
 

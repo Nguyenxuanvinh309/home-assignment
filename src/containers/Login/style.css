@@ -1,0 +1,12 @@
+.slide-up {
+  position: relative;
+  height: 100%;
+  transform: translateY(0);
+  opacity: 1;
+  animation: slide-up 0.5s;
+}
+
+@keyframes slide-up {
+  0% { transform: translateY(70%); opacity: 0; }
+  50% { transform: translateY(0); opacity: 1; }
+}

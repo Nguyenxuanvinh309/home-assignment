@@ -10,3 +10,5 @@ export const REG_EXP = {
   KATAKANA: /^[\x20\u3000\u30a0-\u30ff\uff65-\uff9f]+$/,
   ZIP_CODE: /[0-9]{7}/,
 };
+
+export const OP_DATA = 'op_data';
