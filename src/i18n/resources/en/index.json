@@ -30,7 +30,12 @@
       "title": "Login"
     },
 		"email": "Email",
-		"forgottenEmail": "Forgotten email"
+		"forgottenEmail": "Forgotten email",
+		"forgottenEmailDescription": "*Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+		"name": {
+			"firstName": "First name",
+			"lasName": "Last name"
+		}
 	},
 	"validation": {
 		"permissionDenied": "Permission Denied.",

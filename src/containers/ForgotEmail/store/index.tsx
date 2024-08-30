@@ -8,7 +8,7 @@ const initialState: State = {
 }
 
 // Create your store, which includes both state and (optionally) actions
-const loginStore = create<State & Action>((set) => ({
+const forgotEmailStore = create<State & Action>((set) => ({
   ...initialState,
   updateLoading: (loading) => set(() => ({ loading: loading })),
   updateError: (error) => set(() => ({ error: error })),
@@ -18,4 +18,4 @@ const loginStore = create<State & Action>((set) => ({
   },
 }));
 
-export default loginStore;
+export default forgotEmailStore;

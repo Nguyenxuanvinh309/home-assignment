@@ -30,7 +30,12 @@
       "title": "ログイン"
     },
     "email": "メールアドレス",
-    "forgottenEmail": "忘れたメールアドレス"
+    "forgottenEmail": "忘れたメールアドレス",
+    "forgottenEmailDescription": "*何は九月どうもその吹聴人という事の以上を買うたた。",
+    "name": {
+			"firstName": "ファーストネーム",
+			"lasName": "苗字"
+		}
   },
   "validation": {
     "permissionDenied": "Permission Denied.",
