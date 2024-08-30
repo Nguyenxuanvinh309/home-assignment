@@ -4,13 +4,13 @@ import {
   InputForm,
 } from '../../components';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import schema, { LoginType } from './model/schema';
+import schema, { ForgotEmailType } from './model/schema';
 import { yupResolver } from '@hookform/resolvers/yup';
 
 type Props = {
   loading: boolean,
-  onSubmit: SubmitHandler<LoginType>,
-  defaultValues: LoginType
+  onSubmit: SubmitHandler<ForgotEmailType>,
+  defaultValues: ForgotEmailType
 }
 
 const Form = ({
@@ -21,7 +21,7 @@ const Form = ({
   const {
     control,
     handleSubmit,
-  } = useForm<LoginType>({
+  } = useForm<ForgotEmailType>({
     resolver: yupResolver(schema),
     defaultValues,
     mode: 'onBlur'
@@ -31,16 +31,30 @@ const Form = ({
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <InputForm 
-          name="email" 
-          control={control} 
-          label={t('global:email')}
-          onClick={() => {}}
-          placeholder={t('global:email')}
-          required
-          size="large"
-          variant="default"
-        />
+        <div className="mb-[20px]">
+          <InputForm 
+            name="firstName" 
+            control={control} 
+            label={t('global:name.firstName')}
+            onClick={() => {}}
+            placeholder={t('global:name.firstName')}
+            required
+            size="large"
+            variant="default"
+          />
+        </div>
+        <div>
+          <InputForm 
+            name="lastName" 
+            control={control} 
+            label={t('global:name.lasName')}
+            onClick={() => {}}
+            placeholder={t('global:name.lasName')}
+            required
+            size="large"
+            variant="default"
+          />
+        </div>
         <div className='mt-[20px]'>
           <Button 
             label={t('global:send')} 

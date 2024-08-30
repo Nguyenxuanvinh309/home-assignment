@@ -7,7 +7,8 @@ export type State = {
   data: {
     code: 200,
     params: {
-      email: string
+      firstName: string,
+      lastName: string
     }
   } | undefined
 };
