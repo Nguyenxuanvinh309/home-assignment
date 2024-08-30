@@ -91,7 +91,7 @@ const Component = () => {
                       }}
                     />
                     <div className="mt-[5px]">
-                      <a href="/forgot-email" className="text-primary text-sm hover:text-primary hover:underline">{t('global:forgottenEmail')}</a>
+                      <a href="#" className="text-primary text-sm hover:text-primary hover:underline">{t('global:forgottenEmail')}</a>
                     </div>
                   </>
                 )
