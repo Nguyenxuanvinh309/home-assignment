@@ -1,18 +1,17 @@
-import { useForm, SubmitHandler } from "react-hook-form";
+import { SubmitHandler } from "react-hook-form";
 import {
   Button,
-  InputForm,
   Loading
 } from '../../components';
-import { yupResolver } from '@hookform/resolvers/yup';
 import { useTranslation } from 'react-i18next';
-import schema, { LoginType } from "./model/schema";
+import { LoginType } from "./model/schema";
 import { loginRequest } from './action';
 import loginStore from "./store";
 import "./style.css";
 import Helper from "../../utils/helpers";
 import { OP_DATA } from "../../utils/constants";
 import { useEffect } from "react";
+import Form from "./Form";
 
 const Component = () => {
   const loading = loginStore((state) => state.loading);
@@ -25,18 +24,8 @@ const Component = () => {
   const { t } = useTranslation();
   const token = Helper.getAuthToken();
   const opData = Helper.getDataStored(OP_DATA);
-  const {
-    control,
-    handleSubmit,
-  } = useForm<LoginType>({
-    resolver: yupResolver(schema),
-    defaultValues: {
-      email: ''
-    },
-    mode: 'onBlur'
-  });
 
-  const onSubmit: SubmitHandler<LoginType > = (data) => {
+  const handleSubmit: SubmitHandler<LoginType> = (data) => {
     resetStore();
     updateLoading(true);
     loginRequest({
@@ -94,28 +83,16 @@ const Component = () => {
                 ) : (
                   <>
                     <p className="text-primary text-2xl">{t('global:login.title')}</p>
-                      <form onSubmit={handleSubmit(onSubmit)} action="https://httpbin.org/basic-auth">
-                        <InputForm 
-                          name="email" 
-                          control={control} 
-                          label={t('global:email')}
-                          onClick={() => {}}
-                          placeholder={t('global:email')}
-                          required
-                          size="large"
-                          variant="default"
-                        />
-                        <div className='mt-[20px]'>
-                          <Button 
-                            label={t('global:send')} 
-                            size="large"
-                            disabled={loading}
-                          />
-                        </div>
-                      </form>
-                      <div className="mt-[5px]">
-                        <a href="#" className="text-primary text-sm hover:text-primary hover:underline">{t('global:forgottenEmail')}</a>
-                      </div>
+                    <Form 
+                      loading={loading}
+                      onSubmit={handleSubmit}
+                      defaultValues={{
+                        email: ''
+                      }}
+                    />
+                    <div className="mt-[5px]">
+                      <a href="#" className="text-primary text-sm hover:text-primary hover:underline">{t('global:forgottenEmail')}</a>
+                    </div>
                   </>
                 )
               }
