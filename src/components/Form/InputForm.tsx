@@ -22,7 +22,7 @@ const InputForm = ({
 } : Props & InputProps) => {
   const { t } = useTranslation();
   const {
-    field: { value = '', ref },
+    field: { value = '' },
     fieldState: { error },
   } = useController({
     name,
@@ -38,7 +38,6 @@ const InputForm = ({
         <InputComponent
           { ...field }
           {...props }
-          ref={ref}
           value={value}
           size={size}
           label={label}

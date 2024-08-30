@@ -41,7 +41,7 @@ const Component = () => {
     })?.catch((error) => {
       updateError(error);
       updateLoading(false);
-    });
+    });;
   };
 
   // Handle Log out
