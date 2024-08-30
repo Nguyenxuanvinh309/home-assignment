@@ -12,3 +12,13 @@ export const REG_EXP = {
 };
 
 export const OP_DATA = 'op_data';
+export const LANG_OPTIONS = [
+  {
+    label: '日本語',
+    value: 'jp',
+  },
+  {
+    label: 'English',
+    value: 'en',
+  },
+];
