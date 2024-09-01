@@ -3,7 +3,7 @@ import service from "../service";
 
 export async function forgotRequest(params: ForgotEmailType) {
   try {
-    const res = service.login(params);
+    const res = service.forgotEmailType(params);
     const data = (await res)?.data;
     const parseData = {
       ...JSON.parse(data),

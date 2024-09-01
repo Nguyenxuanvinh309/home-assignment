@@ -1,18 +1,18 @@
 import { AxiosResponse } from 'axios';
 import ApiInstance from '../../../utils/api';
-import { LoginType } from '../model/schema';
+import { ForgotEmailType } from '../model/schema';
 
-class AuthService extends ApiInstance {
+class ForgotEmailService extends ApiInstance {
   constructor(protected apiUrl: string) {
     super(apiUrl);
   }
 
-  login = (params: LoginType): Promise<AxiosResponse> => {
+  forgotEmailType = (params: ForgotEmailType): Promise<AxiosResponse> => {
     return this.post(`/post`, {
       params
     });
   };
 }
 
-const service = new AuthService('');
+const service = new ForgotEmailService('');
 export default service;
