@@ -10,3 +10,15 @@
   0% { transform: translateY(70%); opacity: 0; }
   50% { transform: translateY(0); opacity: 1; }
 }
+
+.slide-down {
+  position: relative;
+  transform: translateY(0);
+  opacity: 1;
+  animation: slide-down 2s;
+}
+
+@keyframes slide-down {
+  0% { transform: translateY(-50%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}

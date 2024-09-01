@@ -15,7 +15,7 @@ export const OP_DATA = 'op_data';
 export const LANG_OPTIONS = [
   {
     label: '日本語',
-    value: 'jp',
+    value: 'ja',
   },
   {
     label: 'English',

@@ -5,7 +5,6 @@ import Helper from "../../utils/helpers";
 export default function SwitchLanguage() {
   const { i18n } = useTranslation();
   const currentLang = Helper.getLang();
-
   return (
     <div className="flex absolute right-[10px] top-[10px] bg-gray-400 rounded-lg overflow-hidden">
       {
