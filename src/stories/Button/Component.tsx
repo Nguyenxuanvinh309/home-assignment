@@ -1,6 +1,6 @@
 import React from 'react';
-import Component from '../../components/Button';
-import { ButtonProps as Props } from '../../components/Button';
+import Component from '@/components/Button';
+import { ButtonProps as Props } from '@/components/Button';
 
 /**
  * Primary UI component for user interaction

@@ -1,7 +1,7 @@
 import { SubmitHandler } from "react-hook-form";
 import {
   Loading
-} from '../../components';
+} from '@/components';
 import { useTranslation } from 'react-i18next';
 import { LoginType } from "./model/schema";
 import { loginRequest } from './action';

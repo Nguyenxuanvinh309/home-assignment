@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
-import { LANG_OPTIONS } from "../../utils/constants";
-import Helper from "../../utils/helpers";
+import { LANG_OPTIONS } from "@/utils/constants";
+import Helper from "@/utils/helpers";
 
 export default function SwitchLanguage() {
   const { i18n } = useTranslation();

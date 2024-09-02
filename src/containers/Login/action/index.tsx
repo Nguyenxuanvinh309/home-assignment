@@ -1,5 +1,5 @@
-import { LoginType } from "../model/schema";
-import service from "../service";
+import { LoginType } from "@/containers/Login/model/schema";
+import service from "@/containers/Login/service";
 
 export async function loginRequest(params: LoginType) {
   try {

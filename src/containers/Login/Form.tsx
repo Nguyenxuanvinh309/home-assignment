@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import {
   Button,
   InputForm,
-} from '../../components';
+} from '@/components';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import schema, { LoginType } from './model/schema';
 import { yupResolver } from '@hookform/resolvers/yup';

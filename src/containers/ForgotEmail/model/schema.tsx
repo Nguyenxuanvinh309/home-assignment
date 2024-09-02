@@ -1,5 +1,5 @@
 import { InferType, object, string } from 'yup';
-import { t } from '../../../i18n';
+import { t } from '@/i18n';
 
 const schema = object({
   firstName: string()

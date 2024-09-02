@@ -1,6 +1,6 @@
 import { AxiosResponse } from 'axios';
-import ApiInstance from '../../../utils/api';
-import { LoginType } from '../model/schema';
+import ApiInstance from '@/utils/api';
+import { LoginType } from '@/containers/Login/model/schema';
 
 class AuthService extends ApiInstance {
   constructor(protected apiUrl: string) {

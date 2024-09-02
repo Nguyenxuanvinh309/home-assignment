@@ -1,6 +1,6 @@
 import React from 'react';
-import Component from '../../components/Input';
-import { InputProps as Props } from '../../components/Input';
+import Component from '@/components/Input';
+import { InputProps as Props } from '@/components/Input';
 
 /**
  * Primary UI component for user interaction

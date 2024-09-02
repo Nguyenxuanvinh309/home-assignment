@@ -1,8 +1,8 @@
-import Login from '../containers/Login';
-import ForgotEmail from '../containers/ForgotEmail';
+import Login from '@/containers/Login';
+import ForgotEmail from '@/containers/ForgotEmail';
 import { createBrowserRouter } from 'react-router-dom';
 import { RouteItem } from './types';
-import ErrorPage from '../containers/ErrorPage';
+import ErrorPage from '@/containers/ErrorPage';
 
 export const indexRoutes: RouteItem[] = [
   {

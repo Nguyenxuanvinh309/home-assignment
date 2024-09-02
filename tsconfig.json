@@ -31,7 +31,7 @@
     "noEmit": true,
     "isolatedModules": true,
     "incremental": true,
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "plugins": [
       {
         "name": "next"
@@ -39,7 +39,8 @@
     ],
     "paths": {
       "@icons/*": ["../public/icons/*"],
-      "@images/*": ["../public/images/*"]
+      "@images/*": ["../public/images/*"],
+      "@/*": ["src/*"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx"],
