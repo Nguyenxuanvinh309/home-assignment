@@ -12,7 +12,9 @@
     "name": {
 			"firstName": "ファーストネーム",
 			"lasName": "苗字"
-		}
+		},
+    "notFoundDescription": "お探しのページが見つかりませんでした トップから再度お試しください!",
+    "backToTop": "トップに戻る"
   },
   "validation": {
     "invalidField": "無効な形式です。",

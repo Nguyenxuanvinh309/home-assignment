@@ -12,7 +12,9 @@
 		"name": {
 			"firstName": "First name",
 			"lasName": "Last name"
-		}
+		},
+		"notFoundDescription": "The page you were looking for could not be found. Please try again!",
+		"backToTop": "Back to home"
 	},
 	"validation": {
 		"invalidField": "Invalid format.",
