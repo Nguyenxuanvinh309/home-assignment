@@ -1,4 +1,4 @@
-import SwitchLanguage from '../components/SwitchLang';
+import SwitchLanguage from '@/components/SwitchLang';
 
 const Layout = ({
   children

@@ -1,6 +1,6 @@
 import { InferType, object, string } from 'yup';
-import { REG_EXP } from '../../../utils/constants';
-import { t } from '../../../i18n';
+import { REG_EXP } from '@/utils/constants';
+import { t } from '@/i18n';
 
 const schema = object({
   email: string()

@@ -1,4 +1,4 @@
-import Layout from "../../layouts";
+import Layout from "@/layouts";
 import Component from "./Component";
 
 function ForgotEmail() {

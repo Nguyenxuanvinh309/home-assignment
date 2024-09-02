@@ -1,5 +1,5 @@
-import { ForgotEmailType } from "../model/schema";
-import service from "../service";
+import { ForgotEmailType } from "@/containers/ForgotEmail/model/schema";
+import service from "@/containers/ForgotEmail/service";
 
 export async function forgotRequest(params: ForgotEmailType) {
   try {

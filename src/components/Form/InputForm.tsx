@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Control, Controller, FieldValues, useController } from "react-hook-form";
-import InputComponent from '../Input';
-import { InputProps } from "../Input";
+import InputComponent from '@/components/Input';
+import { InputProps } from "@/components/Input";
 import { useTranslation } from "react-i18next";
 
 interface Props {
